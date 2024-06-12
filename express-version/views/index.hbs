@@ -1,0 +1,48 @@
+<style>
+    .inicioNavLink {
+        background-color: rgba(140, 172, 150, 0.562);
+    }
+</style>
+
+<main>
+    <div class="columnas">
+        <section class="novedades">
+            <h1 class="cursiva" style="margin-left: 50px; text-decoration: underline black;">Novedades</h1>
+            {{#if admin}}
+                <a href="/agregar" style="color: black;"><i class='bx bxs-message-add addBtn1'></i></a>
+            {{/if}}
+            <ul>
+                {{#each novedades}}
+                    <li>
+                        <div class="noticia">
+                            <h4>{{titulo}}</h4>
+                            <p>{{cuerpo}}</p>
+                            {{#if ../admin}}
+                                <a href="/deleteNew/{{id}}"><i class='bx bx-x elimBtn'></i></a>
+                                <a href="/editNew/{{id}}"><i class='bx bxs-pencil editBtn'></i></a>
+                            {{/if}}
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+        
+        <section class="destacados">
+            <h1 class="cursiva" style="margin-left: 50px; text-decoration: underline black;">Platos Del Día</h1>
+            <div class="productos">
+                {{#prods}}
+                    {{#if destacado}}
+                        <div class="producto">
+                            {{{imagen}}}
+                            <div id='{{nombre}}' class="info">
+                                <h5>{{nombre}}</h5>
+                                <p>{{descripcion}}</p>
+                                <p>Precio: ${{precio}}</p>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/prods}}
+            </div>
+        </section>
+    </div>
+</main>

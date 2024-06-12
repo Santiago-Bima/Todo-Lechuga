@@ -1,0 +1,144 @@
+main{
+    background-color: rgba(247, 237, 228, 0.74);
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+}
+section{
+    margin: 35px 20px;
+}
+
+
+.alerta{
+    position: fixed;
+    right: 200px;
+    top: 182px;
+    z-index: 100;
+    display: none;
+}
+.alerta.activado{
+    display: initial;
+}
+.edit{
+    position: relative;
+    top: -62px;
+    border-radius: 5px;
+    background-color: beige;
+    border: black solid 1px;
+    padding: 10px;
+}
+.edit:hover{
+    background-color: rgb(238, 238, 221);
+}
+.elim{
+    margin-left: 10px;
+    display: none;
+}
+.elimBtn{
+    border-radius: 5px;
+    background-color: rgb(238, 97, 97);
+    padding: 10px;
+    display: none;
+}
+.addBtn{
+    border-radius: 5px;
+    background-color: rgb(169, 238, 129);
+    padding: 10px;
+    margin-right: 10px;
+    display: none;
+}
+.destacado{
+    display: none;  
+}
+
+.elimBtn:hover{
+    background-color: rgb(211, 102, 102);
+}
+.addBtn:hover{
+    background-color: rgb(171, 223, 141);
+}
+.elim.activado{
+    display: inline;
+}
+.elimBtn.activado{
+    display: inline;
+}
+.addBtn.activado{
+    display: inline;
+}
+
+
+.producto{
+    display: flex;
+    margin: 20px;
+}
+.producto img{
+    max-width: 200px;
+    object-fit:contain;
+}
+.producto h5{
+    margin: 10px;
+}
+.producto p{
+    box-sizing: content-box;
+    margin-left: 10px;
+}
+
+
+@media only screen and (max-width: 960px) {
+    .producto{
+        display: block;
+        word-wrap: break-word;
+        width: 250px;
+        padding: 0 40px 0 0px;
+    }
+}
+@media only screen and (max-width: 690px) {
+    .columnas{
+        display: block;
+        width: 100vw;
+    }
+    .destacaos{
+        margin: 0 auto;
+    }
+    .producto{
+        display: block;
+        padding: 0;
+        margin: 10px auto;
+        max-width: 200px;
+    }
+    .producto img{
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .productos{
+        display: block;
+    }
+    .producto{
+        display: flex;
+        flex-direction: column;
+    }
+    .producto img{
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    nav ul #links{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        background-color: rgb(148, 180, 158);
+        top: -102px; 
+        height: 152px;
+        width: 100vw;
+        z-index: 10;
+        transition: transform .4s;
+    }
+    .producto{
+        width: auto;
+    }
+}

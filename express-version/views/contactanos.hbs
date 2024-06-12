@@ -1,0 +1,38 @@
+<style>
+    .contactanosNavLink{
+        background-color:rgba(140, 172, 150, 0.562);
+    }
+</style>
+<main>
+    <div class="col left">
+        <h2 class="cursiva" style="margin-left: 50px; text-decoration: underline black;">Contacto Rapido</h2>
+        <form action="/api/contenido" method="post" class="form">
+            <p>
+                <input name='nombre' type="text" placeholder="Nombre" />
+            </p>
+            <p>
+                <input name='email' type="email" placeholder="Email" />
+            </p>
+            <p>
+                <input name='telefono' type="text" placeholder="Tél:" />
+            </p>
+            <p>
+                <textarea name='mensaje' id="comentario" placeholder="Algo que decir?"></textarea>
+            </p>
+            <p class="acciones">
+                <input type="submit" value="Enviar" />
+            </p>
+        </form>
+    </div>
+    <div class="col right">
+        <h2 class="cursiva" style="margin-left: 50px; text-decoration: underline black;">Otras vías de contacto
+        </h2>
+        <p>Tambien se puede comunicar con nosotros por estos medios...</p>
+        <ul>
+            <li>Teléfono: 351-655-4663</li>
+            <li>Email: todolechuga@gmail.com</li>
+            <li>Facebook: todo-lechuga</li>
+            <li>Twitter: todo_lechuga</li>
+        </ul>
+    </div>
+</main>

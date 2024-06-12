@@ -1,0 +1,160 @@
+.nav{
+    background-color: rgb(197, 231, 207);
+    position: relative;
+    z-index: 100;
+}
+nav h1.cursiva{
+    display: inline;
+    position: relative;
+    top: -40px;
+}
+header nav img{
+    width: 150px;
+    margin: 10px 15px;
+    display: inline;
+}
+header nav h1{
+    display: inline-block;
+    position: relative;
+    top: -50px;
+    right: 50px;
+}
+nav ul{
+    list-style: none;
+    background-color: rgb(157, 202, 171);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.nav ul{
+    display: none;
+}
+nav .ham{
+    display: none;
+}
+nav ul a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 15px 50px;
+}
+nav ul a:hover{
+    background-color: rgba(140, 172, 150, 0.562);
+}
+nav ul li{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.saludo{
+    display: inline;
+    position: absolute;
+    top: 50px;
+    right: 120px;
+    z-index: 100;
+}
+.registro, .ingreso, .salir{
+    position: absolute;
+    margin: 10px;
+    top: 110px;
+    background-color: rgb(164, 238, 171);
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    z-index: 100;
+    text-decoration: none;
+    color: black;
+}
+.registro, .salir{
+    right: 120px;
+}
+.salir{
+    background-color: rgb(197, 91, 91);
+}
+.salir:hover{
+    background-color: rgb(165, 79, 79);
+}
+.ingreso{
+    right: 230px;
+}
+.registro:hover, .ingreso:hover{
+    background-color: rgb(138, 190, 144);
+}
+
+
+
+
+@media only screen and (max-width: 810px) {
+    nav ul{
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 690px) {
+    nav ul a{
+        padding: 15px 30px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    nav ul a{
+        padding: 15px 10px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    header nav img{
+        width: 150px;
+        margin: 0px auto;
+        display: block;
+    }
+    header nav h1{
+        display: block;
+        text-align: center;
+        top: 0px;
+        right: 0px;
+    }
+    nav ul #links{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        background-color: rgb(148, 180, 158);
+        top: -102px; 
+        height: 152px;
+        width: 100vw;
+        z-index: 10;
+        transition: transform .4s;
+    }
+    nav ul #links.activado{
+        transform: translateY(202px);
+    }
+    nav ul a{
+        text-align: center;
+        width: 100vw;
+        display: block;
+        padding: 10px 0;
+    }
+    nav ul.ham{
+        position: relative;
+        z-index: 100;
+        background-color: rgb(157, 202, 171);
+        height: 50px;
+    }
+    nav .ham{
+        display: inline;
+        position: absolute;
+        right: 30px;
+        top: 190px;
+        padding: 5px;
+        border-radius: 5px;
+        border: lightslategray 1.5px solid;
+        z-index: 100;
+    }
+    .nav ul{
+        display: block;
+    }
+    nav .enlaces ul{
+        position: relative;
+        top: -50px;
+    }
+}

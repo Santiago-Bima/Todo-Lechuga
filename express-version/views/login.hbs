@@ -1,0 +1,43 @@
+<style>
+    body{
+        background: rgb(60, 62, 68);
+    }
+    .title_ingreso{
+        text-decoration: underline rgb(161, 161, 161);
+        text-align: center;
+        color: rgb(161, 161, 161);
+    }
+
+    .formIng{
+        margin: 0 auto;
+        background-color: rgb(104, 135, 192);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    .inputFormIng{
+        margin-bottom: 15px;
+        width: 170px;
+    }
+    button{
+        width: 170px;
+    }
+
+</style>
+
+
+<h1 class="cursiva title_ingreso">Ingreso</h1>
+<form class='formIng' action="/login" method="POST">
+    <label for="email">Email: </label>
+    <input class='inputFormIng' type="email" id='email' name='email' placeholder="Ingrese el mail" autocomplete='off'>
+    <label for="psw">Password: </label>
+    <input class='inputFormIng' type="password" id='psw' name='psw' placeholder="Ingrese la contraseña">
+    <button type="submit">Enviar</button>
+    {{#if error}}
+        <p>Usuario o clave incorrectos.</p>
+    {{/if}}
+</form>

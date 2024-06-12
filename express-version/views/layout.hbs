@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>{{title}}</title>
+        
+        <link rel="icon" href="/images/logo.png" />
+        <link rel="stylesheet" href="/stylesheets/nav.css">
+        <link rel="stylesheet" href="/stylesheets/normalize.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="/stylesheets/inicio.css">
+        <link rel="stylesheet" href="/stylesheets/menu.css">
+        <link rel="stylesheet" href="/stylesheets/SobreNosotros.css">
+        <link rel="stylesheet" href="/stylesheets/Contactanos.css">
+        <link rel="stylesheet" href="/stylesheets/Footer.css">
+        <!-- fuentes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet"> 
+        <!-- iconos -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav">
+                <img src='/images/logo.png' alt="Todo lechuga" width="150px" height="100px" />
+                <h1 class="cursiva">Todo Lechuga</h1>
+                <ul>
+                    <i class='bx bx-menu ham'></i>
+                </ul>
+            </div>
+            <div class="enlaces">
+                <ul>
+                    <div id="links" class="desactivado">
+                        <li>
+                            <a class='inicioNavLink' href='/'>Inicio</a>
+                        </li>
+                        <li>
+                            <a class='menuNavLink' href='/menu'>Menú</a>
+                        </li>
+                        <li>
+                            <a class='nosotrosNavLink' href='/nosotros'>Sobre Nosotros</a>
+                        </li>
+                        <li>
+                            <a class='contactanosNavLink' href='/contactanos'>Contactanos</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <div class="cuenta">
+                {{#if conocido}}
+                    <form action="/salir" method="POST">
+                        <div class="registrado">
+                            <h4 class="saludo">Hola {{username}} !!</h4>
+                            <input type='submit' class="salir" value="salir"></input>
+                        </div>
+                    </form>
+                {{/if}}
+                {{#unless conocido}}
+                    <a href='/login' class="ingreso">Ingresar</a>
+                    <h4 class="saludo">{{error1}}</h4>
+                    <a href='/registro' class="registro">Registrarse</a>
+                {{/unless}}
+            </div>
+        </nav>
+        {{{body}}}
+        <footer>
+            <p>Diseñado por Santiago Bima - &copy;año</p>
+        </footer>
+
+        <script src="/javascripts/aside.js"></script>
+    </body>
+</html>

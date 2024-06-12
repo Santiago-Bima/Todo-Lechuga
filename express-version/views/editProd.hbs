@@ -1,0 +1,56 @@
+<style>
+    body{
+        background: rgb(60, 62, 68);
+    }
+    .title_registro{
+        text-decoration: underline rgb(161, 161, 161);
+        text-align: center;
+        color: rgb(161, 161, 161);
+    }
+
+    #ingresoForm{
+        margin: 0 auto;
+        background-color: rgb(104, 135, 192);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    .agregarInput{
+        margin-bottom: 15px;
+        width: 170px;
+    }
+
+</style>
+
+
+<h1 class="cursiva title_registro">Editar Producto</h1>
+<form id='ingresoForm' action="/editProd" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{prod.id}}">
+    <input type="hidden" name="destacado" value="{{prod.destacado}}">
+    <input class='agregarInput' name='nombre' type="text" placeholder='nombre del producto' value="{{prod.nombre}}"/>
+    <br />
+    <br />
+    <textarea class='agregarInput' name='contenido' placeholder='escriba el contenido del producto'>{{prod.cuerpo}}</textarea>
+    <br />
+    <br />
+    <input type="file" name="img" id="img" accept="image/png, image/jpeg, image/jpg" size="20">
+    <input type="hidden" name="img_actual" value='{{prod.imagen}}'>
+    <br />
+    <br />
+    <select name='tipos'>
+		<option value="{{prod.tipo_de_producto}}">{{prod.tipo_de_producto}}</option>
+		{{#each tipos}}
+			<option value={{tipo}}>{{tipo}}</option>
+		{{/each}}
+	</select>
+    <br/>
+    <input type="number" name="precio" min="1" value="{{prod.precio}}">
+    <input class='agregarInput' type="submit" value="postear noticia" style="margin-top: 10px;"/>   
+    {{#if error}}
+        <h5>{{message}}</h5>
+    {{/if}}
+</form>

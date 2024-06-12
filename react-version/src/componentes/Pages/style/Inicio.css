@@ -1,0 +1,169 @@
+.columnas{
+    display: flex;
+}
+section{
+    margin: 35px 20px;
+}
+.alerta{
+    position: fixed;
+    right: 200px;
+    z-index: 100;
+    display: none;
+}
+.alerta.activado{
+    display: initial;
+}
+.edit{
+    position: relative;
+    top: -80px;
+    right: -315px;
+    border-radius: 5px;
+    background-color: beige;
+    padding: 10px;
+}
+.edit:hover{
+    background-color: rgb(238, 238, 221);
+}
+.elim{
+    margin-left: 10px;
+    display: none;
+}
+.elimBtn{
+    border-radius: 5px;
+    background-color: rgb(238, 97, 97);
+    padding: 10px;
+    display: none;
+}
+.addBtn{
+    border-radius: 5px;
+    background-color: rgb(169, 238, 129);
+    padding: 10px;
+    margin-right: 10px;
+    display: none;
+}
+
+.elimBtn:hover{
+    background-color: rgb(211, 102, 102);
+}
+.addBtn:hover{
+    background-color: rgb(171, 223, 141);
+}
+.elim.activado{
+    display: inline;
+}
+.elimBtn.activado{
+    display: inline;
+}
+.addBtn.activado{
+    display: inline;
+}
+.novedades{
+    background-color: rgba(127, 150, 81, 0.514);
+    border-radius: 15px;
+    padding: 15px 20px 15px 10px;
+    margin-top: 50px;
+    height: fit-content;
+    min-width: 350px;
+}
+.producto a{
+    display: flex;
+    margin: 20px;
+    text-decoration: none;
+    color: #333;
+}
+.producto a img{
+    max-width: 200px;
+    object-fit:contain;
+}
+.producto a h5{
+    margin: 10px;
+}
+.producto a p{
+    box-sizing: content-box;
+    margin-left: 10px;
+}
+
+.novedades ul{
+    padding-left: 10px;
+}
+.novedades ul li, .productos ul li{
+    list-style: none;
+}
+.noticia{
+    border-radius: 20px;
+    border: grey 1.5px solid;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    cursor: context-menu;
+}
+.noticia h4{
+    margin: 10px;
+}
+.noticia p{
+    margin: 0 0 10px 0;
+}
+
+
+@media only screen and (max-width: 960px) {
+    .novedades{
+        max-width: 450px;
+        min-width: 250px;
+    }
+    .producto a{
+        display: block;
+        word-wrap: break-word;
+        width: 250px;
+        padding: 0 40px 0 0px;
+    }
+}
+@media only screen and (max-width: 690px) {
+    .columnas{
+        display: block;
+        width: 100vw;
+    }
+    .novedades{
+        margin: 30px auto;
+    }
+    .destacaos{
+        margin: 0 auto;
+    }
+    .productos{
+        display: flex;
+    }
+    .producto a{
+        display: inline-block;
+        padding: 0;
+        margin: 10px auto;
+        max-width: 200px;
+    }
+    .producto a img{
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
+@media only screen and (max-width: 620px) {
+    .producto a{
+        display: flex;
+        flex-direction: column;
+    }
+    .producto a .info{
+        width: 150px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .productos{
+        display: block;
+    }
+    .producto a img{
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .novedades{
+        min-width: auto;
+    }
+    .producto a{
+        width: auto;
+    }
+}

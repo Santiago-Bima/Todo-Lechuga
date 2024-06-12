@@ -1,0 +1,142 @@
+.col{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0.6em;
+}
+.col.left{
+    border-right: 1px solid gray;
+    padding-left: 100px;
+}
+.col.right p{
+    font-size: 0.9em;
+    margin-left: 40px;
+}
+.col.right ul li{
+    font-size: 0.8em;
+    margin-left: 40px;
+}
+.form label{
+    vertical-align: top;
+    width: 20%;
+    display: inline-block;
+}
+.form input, .form textarea{
+    background-color: #ddd;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 0.4em 0.6em;
+    font-size: 0.8em;
+    width: 70%;
+    text-align: center;
+}
+.form input[type='submit']{
+    background-color: #6da9ed;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    color: white;
+    font-size: 1em;
+    width: auto;
+    cursor: pointer;
+}
+.form textarea{
+    height: 10em;
+    resize: none;
+}
+.form .acciones{
+    position: relative;
+    left: 100px;
+}
+
+@media only screen and (max-width: 930px) {
+    main{
+        flex-direction: column;
+    }
+    .col.left{
+        border-right: 0px;
+        padding-left: 0;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    .col.right{
+        margin-left: 0;
+        margin: 0 auto;
+    }
+    .form p{
+        width: 500px;
+    }
+    .form input, .form textarea{
+            padding: 0;
+            font-size: 0.8em;
+            width: 100%;
+            text-align: center;
+    }
+    .form input{
+        height: 25px;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+        left: -0px;
+    }
+    .form .acciones{
+        left: 220px;
+        width: fit-content;
+    }
+    .col.left h2{
+        position: relative;
+        left: 110px;
+    }
+    .col h2{
+        width: fit-content;
+    }
+    .col.right{
+        width: 100vw;
+    }
+    .col.right h2{
+        margin: 0!important;
+        text-align: center;
+        position: relative;
+        width: 100vw;
+    }
+    .col.right p{
+        margin: 10px 0;
+        text-align: center;
+    }
+    .col.right ul{
+        padding: 0;
+        margin: 0;
+    }
+    .col.right ul li{
+        text-align: center;
+        margin: 0;
+        list-style: none;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .form p{
+        width: 300px;
+    }
+    .form .acciones{
+        left: 130px;
+        width: fit-content;
+    }
+    .col.left h2{
+        position: relative;
+        left: 15px;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .form p{
+        width: 200px;
+    }
+    .form .acciones{
+        left: 80px;
+        width: fit-content;
+    }
+    .col.left h2{
+        position: relative;
+        left: -30px;
+    }
+}

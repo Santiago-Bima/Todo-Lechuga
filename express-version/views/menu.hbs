@@ -1,0 +1,69 @@
+<style>
+    .menuNavLink{
+        background-color:rgba(140, 172, 150, 0.562);
+    }
+</style>
+
+    <aside class="menu">
+        <h1 class="cursiva" style="margin-left: 50px; text-decoration: underline black;">Menú</h1>
+        <div id="flecha">
+            <i class='bx bxs-right-arrow flecha'></i>
+        </div>
+        <ul>
+            {{#each listaTipos}}
+                <li class="subindice">
+                    <h4><a href="menu#{{tipos}}" class="linkprod">{{tipos}}</a></h4>
+                    <ul>
+                        {{#productos}}
+                            <li><a href="menu#{{nombre}}" class="linkprod">{{nombre}}</a></li>
+                        {{/productos}}
+                    </ul>
+                </li>
+            {{/each}}
+        </ul>
+    </aside>
+    <main>
+        <section>
+            <form method="post" action="destacarProd">
+                <h1 class="cursiva" style="margin-left: 50px; text-decoration: underline black;">Menú</h1>
+                {{#if error}}
+                    {{message}}
+                {{/if}}
+                {{#if admin}}
+                    <div style='position: relative; left: 200px;'>
+                        <a href='/newProd'><i style='color: black;' class='bx bxs-message-add addBtn1'></i></a>
+                        <button type="submit" value="" style="background: transparent; border: none"><i class='bx bxs-star destacarBtn'></i></button>
+                    </div>
+                {{/if}}
+                <div class="productos">
+                    {{#each listaTipos}}
+                        <div class="tipo">
+                            <h2 id={{tipos}} class="cursiva" style="margin-left: 70px; text-decoration: underline black;">{{tipos}}</h2>
+                            {{#productos}}
+                                <div class="producto">
+                                    {{{imagen}}}
+                                    <div id='{{nombre}}' class="info">
+                                        <h5>{{nombre}}</h5>
+                                        <p>{{descripcion}}</p>
+                                        <p>Precio: ${{precio}}</p>
+                                    </div>
+                                </div>
+                                {{#if ../../admin}}
+                                    <a href="/deleteProd/{{id}}"><i style="left: 320px !important;position: relative;"class='bx bx-x elimBtn'></i></a>
+                                    <a href="/editProd/{{id}}"><i style="left: 230px !important;position: relative;" class='bx bxs-pencil editBtn'></i></a>
+                                    {{#if destacado}}
+                                        <label for="destacar">Quitar Destacado:</label>
+                                        <input type="checkbox" name="check" value="{{id}}">
+                                    {{else}}
+                                        <label for="destacar">Destacar:</label>
+                                        <input type="checkbox" name="check" value="{{id}}">
+                                    {{/if}}
+                                {{/if}}
+                            {{/productos}}
+                        </div>
+                    {{/each}}
+                </div>
+            </form>
+        </section>
+        </div>
+    </main>

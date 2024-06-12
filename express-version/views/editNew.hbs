@@ -1,0 +1,43 @@
+<style>
+    body{
+        background: rgb(60, 62, 68);
+    }
+    .title_registro{
+        text-decoration: underline rgb(161, 161, 161);
+        text-align: center;
+        color: rgb(161, 161, 161);
+    }
+
+    #ingresoForm{
+        margin: 0 auto;
+        background-color: rgb(104, 135, 192);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    .agregarInput{
+        margin-bottom: 15px;
+        width: 170px;
+    }
+
+</style>
+
+
+<h1 class="cursiva title_registro">Novedad</h1>
+<form id='ingresoForm' action="/editNew" method="post">
+    <input type="hidden" name="id" value="{{noticia.id}}">
+    <input class='agregarInput' name='nombre' type="text" placeholder='nombre de la noticia' value="{{noticia.titulo}}"/>
+    <br />
+    <br />
+    <textarea class='agregarInput' name='contenido' placeholder='escriba el contenido de la noticia'>{{noticia.cuerpo}}</textarea>
+    <br />
+    <br />
+    <input class='agregarInput' type="submit" value="editar noticia" style="margin-top: 10px;"/>   
+    {{#if error}}
+        <h5>{{message}}</h5>
+    {{/if}}
+</form>

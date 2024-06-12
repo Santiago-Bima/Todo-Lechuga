@@ -1,0 +1,45 @@
+<style>
+    body{
+        background: rgb(60, 62, 68);
+    }
+    .title_registro{
+        text-decoration: underline rgb(161, 161, 161);
+        text-align: center;
+        color: rgb(161, 161, 161);
+    }
+
+    .formReg{
+        margin: 0 auto;
+        background-color: rgb(104, 135, 192);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    .inputFormReg{
+        margin-bottom: 15px;
+        width: 170px;
+    }
+    button{
+        width: 170px;
+    }
+
+</style>
+
+
+<h1 class="cursiva title_registro">Registro</h1>
+<form class='formReg' action="/registro" method="POST">
+    <label for="user">Usuario: </label>
+    <input class='inputFormReg' type="text" name='user' placeholder="Ingrese el usuario" autocomplete="off">
+    <label for="email">Email: </label>
+    <input class='inputFormReg' type="email" name='email' placeholder="Ingrese el email" autocomplete='off'>
+    <label for="psw">Password: </label>
+    <input class='inputFormReg' type="password" name='psw' placeholder="Ingrese la contraseña">
+    <button type="submit">Enviar</button>
+    {{#if error}}
+        <p>Ingresó mal los datos</p>
+    {{/if}}
+</form>
